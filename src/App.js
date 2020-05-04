@@ -18,19 +18,19 @@ class App extends React.Component {
   handleCountryChange = async (country) => {
     if (country == "global") {
       const fetchedData = await fetchData();
-      this.setState({ data: fetchedData });
+      this.setState({ data: fetchedData, country: 'World' });
     } else {
       const fetchedData = await fetchData(country);
       this.setState({ data: fetchedData, country: country });
     }
   }
-  
+
   render() {
     const { data, country } = this.state;
 
     return (
       <div className={styles.container}>
-        <h1>COVID-19</h1>
+        <h1>COVID-19 GEOGRAPICAL TRACKER</h1>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
