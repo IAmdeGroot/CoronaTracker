@@ -22,3 +22,9 @@
 .deaths {
   color:rgba(255, 0, 0, 0.5) !important;
 }
+
+@media screen and (max-width: 768px) {
+    .marginBottom {
+        margin-bottom: 3% !important;
+    }
+}
