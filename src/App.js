@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   handleCountryChange = async (country) => {
-    if (country == "global") {
+    if (country === "global") {
       const fetchedData = await fetchData();
       this.setState({ data: fetchedData, country: 'World' });
     } else {
@@ -30,7 +30,7 @@ class App extends React.Component {
 
     return (
       <div className={styles.container}>
-        <h1>COVID-19 GEOGRAPICAL TRACKER</h1>
+        <h1>COVID-19 GEOGRAPHICAL TRACKER</h1>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
